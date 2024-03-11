@@ -19,9 +19,7 @@ import phones.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', phones.views.index),  # Перенаправление с главной страницы на каталог
+    path('', phones.views.index, name='index'),  # Перенаправление с главной страницы на каталог
     path('catalog/', phones.views.show_catalog, name='catalog'),  # Путь для отображения каталога
     path('catalog/<slug:slug>/', phones.views.show_product, name='phone'),  # Путь для отображения продукта
-    path('load_data/', phones.views.load_data_from_csv, name='load_data'),  # Путь для загрузки данных из CSV
 ]
-
